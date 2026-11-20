@@ -106,3 +106,6 @@ git commit -m "feat: implement offline-first Flutter SQLite and cloud sync"
 ```
 
 Puedes seguir haciendo commits por pruebas y documentación. No se incluye un historial simulado de commits.
+
+# Flutter-Offline-First
+Flutter Offline-First with SQLite, Firebase and WorkManager
