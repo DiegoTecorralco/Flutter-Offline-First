@@ -1,0 +1,43 @@
+# ==========================================
+# Flutter y Dart
+# ==========================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+build/
+
+# ==========================================
+# Android
+# ==========================================
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+
+# ==========================================
+# Firebase
+# ==========================================
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+.firebase/
+
+# ==========================================
+# Bases de datos SQLite
+# ==========================================
+*.db
+*.db-wal
+*.db-shm
+
+# ==========================================
+# Variables de entorno
+# ==========================================
+.env
+.env.*
+
+# ==========================================
+# Archivos temporales
+# ==========================================
+*.log
+*.tmp

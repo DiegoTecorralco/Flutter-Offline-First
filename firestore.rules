@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/tasks/{taskId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly([
+          'title', 'completed', 'is_deleted', 'updated_at', 'version'])
+        && request.resource.data.keys().hasAll([
+          'title', 'completed', 'is_deleted', 'updated_at', 'version'])
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && request.resource.data.title.size() <= 120
+        && request.resource.data.completed is bool
+        && request.resource.data.is_deleted is bool
+        && request.resource.data.updated_at is string
+        && request.resource.data.version is int;
+      allow delete: if false; // soft delete exclusivamente
+    }
+  }
+}
